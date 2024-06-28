@@ -1,8 +1,8 @@
 const config = {
-  DB_USERNAME: "postgres",
-  DB_PASSWORD: "123456",
-  DB_HOST: "127.0.0.1",
-  DB_NAME: "database",
+  DB_USERNAME: "postgres.qpbapqnqlbjtavgwkgsi",
+  DB_PASSWORD: "binar-car-rental123",
+  DB_HOST: "aws-0-ap-southeast-1.pooler.supabase.com",
+  DB_NAME: "postgres",
 };
 
 module.exports = {
