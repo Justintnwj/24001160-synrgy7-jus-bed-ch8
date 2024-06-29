@@ -3,15 +3,8 @@ import controllers from "../app/controllers";
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const apiRouter = express.Router();
-import cors from "cors";
 const swaggerDocuments = YAML.load("./openapi.yaml");
-apiRouter.use(cors());
-apiRouter.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://24001160-synrgy7-jus-fed2-ch8.vercel.app");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
+apiRouter.use((req, res, next) => { res.header({"Access-Control-Allow-Origin": "*"}); next(); })
 //routes for openapi
 apiRouter.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocuments));
 // route for users
