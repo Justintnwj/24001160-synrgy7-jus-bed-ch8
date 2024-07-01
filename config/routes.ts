@@ -5,9 +5,8 @@ const YAML = require("yamljs");
 const apiRouter = express.Router();
 import cors from "cors";
 const swaggerDocuments = YAML.load("./openapi.yaml");
-apiRouter.use(cors({
-  origin: 'https://24001160-synrgy7-jus-fed2-ch8.vercel.app'
-}));
+
+apiRouter.use(cors())
 
 //routes for openapi
 apiRouter.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocuments));
