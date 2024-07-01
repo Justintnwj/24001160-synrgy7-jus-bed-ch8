@@ -6,7 +6,7 @@ const apiRouter = express.Router();
 import cors from "cors";
 const swaggerDocuments = YAML.load("./openapi.yaml");
 
-apiRouter.use(cors())
+apiRouter.use(cors());
 
 //routes for openapi
 apiRouter.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocuments));
